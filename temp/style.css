@@ -1,0 +1,31 @@
+body {
+  background-color: #ffc966;
+    background-attachment: fixed;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.8;
+    color: #ffffff;
+    text-align: center;
+  }
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-weight: 100;
+  font-size: 60px;
+}
+
+a:link {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+a:hover {
+  font-size: 25px;
+  letter-spacing: .2em;
+}
+
+body .form-upper {
+  text-transform: uppercase;
+}

@@ -1,0 +1,4 @@
+Name	Food	Description	Expiration\Quantity
+costco	bananas	fruit	1 week	1
+stater bros	apples	fruit	3 days	6
+trader joe's	wheat bread	grain	1 weeks	8
