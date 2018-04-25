@@ -1,2 +1,0 @@
-# citruskitchen
-CitrusHack project: CITRUSKITCHEN

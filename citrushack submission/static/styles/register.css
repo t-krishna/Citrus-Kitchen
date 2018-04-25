@@ -1,14 +1,14 @@
 body{
     margin: 0;
     padding: 0;
-    background: url('../images/citrusregister.jpg');
+    background: url(citrusregister.jpg);
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
 }
 .login-box{
     width: 320px;
-    height: 390px;
+    height: 625px;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
     top: 50%;

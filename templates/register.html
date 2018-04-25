@@ -1,54 +1,94 @@
 <html>
-
 <head>
-    
-<title> Transparent Login Form Design </title>
-    
-<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/register.css') }}">
-
+    <title> Citrus Kitchen </title>
+    <link rel="stylesheet" type="text/css" href="../static/styles/register.css">
 </head>
-    
-<body>
-    
-<div class="login-box">
-    
-<img src="{{ url_for('static',filename='images/corgi2.jpg') }}" class="avatar">
-        
-<h1>Register Here</h1>
-            
-<form>
-            
-<p>Username</p>
-            
-<input type="text" name="username" placeholder="Enter Username">
-            
-<p>Password</p>
-            
-<input type="password" name="password" placeholder="Enter Password">
-            
-<p>Company</p>
-            
-<input type="text" name="name" placeholder="Enter Name">
-            
-<p>Location</p>
-            
-<input type="text" name="location" placeholder="Enter Location">
-            
-<p>Phone Number</p>
-            
-<input type="text" name="phone" placeholder="Enter Phone Number">
-            
-<input type="submit" name="submit" value="Register">
-            
-<a href="login.html">Log In</a>
-            
-</form>
+    <body>
+    <div class="login-box">
+    <img src="../static/images/corgi2.jpg" class="avatar">
+        <h1>Register Here</h1>
+            <form class="form-upper" action="{{ url_for('register') }}" method="POST">
+              <TABLE>
+                <TR>
+                  <TD>
+                    <p>Username</p>
+                    <input type="text" name="username" placeholder="Enter Username" required></p>
+                  </TD>
+                  <TD>
+                    <p>Password</p>
+                    <input type="password" name="password" placeholder="Enter Password" required>
+                  </TD>
+                </TR>
+
+                <TR>
+                  <TD colspan="2">
+                    <p>Company Name</p>
+                    <input type="text" name="name" placeholder="Enter Company Name" required>
+                  </TD>
+                </TR>
+
+                <TR>
+                  <TD>
+                    <p>Street</p>
+                    <input type="text" name="street" placeholder="Enter Street" required>
+                  </TD>
+                  <TD>
+                    <p>City</p>
+                    <input type="text" name="city" placeholder="Enter City" required>
+                  </TD>
+                </TR>
+
+                <TR>
+                  <TD>
+                    <p>State</p>
+                    <input type="text" name="state" placeholder="Enter State" required>
+                  </TD>
+                  <TD>
+                    <p>Zip Code</p>
+                    <input type="text" name="zip" placeholder="Enter Zip" required>
+                  </TD>
+                </TR>
+
+                <TR>
+                  <TD>
+                    <p>Email</p>
+                    <input type="text" name="email" placeholder="Enter Email" required>
+                  </TD>
+                  <TD>
+                    <p>Phone Number</p>
+                    <input type="text" name="phone" placeholder="Enter Phone Number" required>
+                  </TD>
+                </TR>
+
+                <TR>
+                  <TD>
+                    <p style="padding-bottom:6px">Account Type</p>
+                  </TD>
+                </TR>
+                <TR>
+                  <TD>
+                    <label class="container"><p style="padding:4px;font-weight:normal">Donator</p>
+                      <input type="radio" checked="checked" name="radio" value="Donator">
+                      <span class="checkmark"></span>
+                    </label>
+                    <!--<input class="radio" type="radio" name="type" value="restaurant"><p>Donater</p><br>-->
+                  </TD>
+                  <TD>
+                    <label class="container"><p style="padding:4px;font-weight:normal">Donatee</p>
+                      <input type="radio" name="radio" value="Donatee">
+                      <span class="checkmark"></span>
+                    </label>
+                    <!--<input class="radio" type="radio" name="type" value="shelter"><p>Donatee</p><br>-->
+                  </TD>
+                </TR>
+              </TABLE>
+
+            <input type="submit" name="submit" value="Register">
+            <a href="/">Log In</a>
+            </form>
 
 
-        
-</div>
+        </div>
 
-    
-</body>
-
+    </body>
 </html>
