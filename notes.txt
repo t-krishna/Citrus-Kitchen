@@ -1,3 +1,8 @@
-use cklogin
+install python
+pip install -u flask
+pip install flask-mysqldb
+pip install flask-WTF
+pip install passlib
+https://www.youtube.com/watch?v=addnlzdSQs4
 
 CREATE TABLE users(id INT(11) AUTO_INCREMENT PRIMARY KEY, username VARCHAR(30), password VARCHAR(100), name VARCHAR(100), street VARCHAR(50), city VARCHAR(50), state VARCHAR(50), zip VARCHAR(20), email VARCHAR(100), phone VARCHAR(20), type VARCHAR(30));
