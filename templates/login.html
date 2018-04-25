@@ -7,7 +7,7 @@
     <div class="login-box">
     <img src="../static/images/corgi1.jpg" class="avatar">
         <h1>Login Here</h1>
-            <form>
+            <form class="form-upper" action="{{ url_for('login') }}" method="POST">
             <p>Username</p>
             <input type="text" name="username" placeholder="Enter Username">
             <p>Password</p>

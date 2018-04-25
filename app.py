@@ -14,6 +14,35 @@ app.config['MYSQL_CUSORCLASS'] = 'DictCursor'
 #initialize MySQL
 mysql = MySQL(app)
 
+@app.route('/', methods=['GET', 'POST'])
+def login_post():
+    if request.method == 'POST':
+        username = request.form['username']
+        password_candidate = request.form['password']
+
+        cur = mysql.connection.cursor()
+        #get user by Username
+        result = cur.execute("SELECT * FROM users WHERE username = %s", [username])
+
+        if result > 0:
+            data = cur.fetchone()
+            password = data[2]
+            if sha256_crypt.verify(password_candidate, password):
+                #password matched
+                session['logged in'] = True
+                session['username'] = username
+                type = data[10]
+                if type == 'Donator':
+                    return redirect(url_for('donator'))
+                else:
+                    return redirect(url_for('donatee'))
+
+            else:
+                return render_template('passwordnotfound.html')
+        else:
+            return render_template('usernamenotfound.html')
+    return render_template('login.html')
+
 @app.route('/')
 def login():
     return render_template('login.html')
@@ -50,8 +79,16 @@ def register_post():
         #close connection
     cur.close()
 
-    return render_template('success.html')
+    return redirect(url_for('success'))
     #return render_template('register.html', form=form)
+
+@app.route('/donator')
+def donator():
+    return render_template('restaurant.html')
+
+@app.route('/donatee')
+def donatee():
+    return render_template('shelter.html')
 
 if __name__ == '__main__':
     app.secret_key='secret123'
